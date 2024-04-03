@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <!--Link to the css file-->
+        <link rel="stylesheet" href="style.css">
+        <!-- Link to the JavaScript file-->
+        <script src="script.js" defer></script>
+        <style> body {height: 1750px} </style>
+
+        <header>
+            <h1>Green Home Solutions</h1>
+        </header>
+    </head>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="information.html">Information</a>
+        <a href="cost.html">Cost</a>
+        <a href="tax.html">Tax Rebates & Sources</a>
+    </nav>
+
+
+<body>
+   
+    <h1>Is it Efficient to Switch for a Modern Family?</h1>
+    <p>Transitioning to green energy isn't just an investment in a sustainable future; it's a savvy financial move as well. While there are upfront costs involved in setting up solar panels, wind turbines, or other renewable energy systems, the long-term advantages and savings far surpass these initial expenses. By tapping into renewable sources like solar, wind, hydroelectric, and geothermal energy, households and businesses can significantly lessen their dependence on fossil fuels and cut down on energy costs over time.</p>
+    
+    <p>Moreover, many governments and organizations provide incentives, tax credits, and financing options to make the shift to green energy more economical and accessible. This not only brings economic benefits but also aids in combating climate change, reducing air pollution, and fostering a healthier environment for both present and future generations.</p>
+
+    <section id="cost">
+        <h2>What to Consider with  Embracing Green Energy</h2>
+        
+         <div class="content-wrapper">
+            <ul>
+                <li><strong>Initial Setup:</strong> Costs associated with installing solar panels, wind turbines, or other green energy systems.</li>
+                <li><strong>Operational Expenses:</strong> Maintenance, repairs, and ongoing costs related to green energy systems.</li>
+                <li><strong>Return on Investment:</strong> Assess potential energy bill savings and available incentives or rebates.</li>
+                <li><strong>Environmental Impact:</strong> Reflect on the positive environmental effects and the added value to your property.</li>
+
+               
+                 <p>Before making decisions, it's crucial to evaluate your energy requirements, available resources, and financial position. Green energy investments typically yield returns over time, fostering a sustainable and eco-friendly lifestyle.</p>
+
+                 <h2>How Do You Support or Switch to Renewable Energy?</h2>
+                
+                <p>Reach out to your local energy provider to inquire about a tailored green energy plan that aligns with your specific needs and preferences. Many providers offer plans that offset your electricity consumption through Renewable Energy Certificates (RECs). </p>
+                
+                <p>These certificates are issued when a renewable energy source contributes one megawatt-hour of electricity to the grid an amount capable of powering an average American household for 1.2 months.
+
+                <p>By opting for a plan that incorporates RECs, you actively support the expansion of renewable energy generation by purchasing clean energy credits, even if it's not physically available in your area. Although you may not utilize that precise megawatt-hour, your financial contribution aids a clean energy provider in injecting renewable energy into the grid, whether locally or elsewhere.</p>
+                    
+                    Additionally, consider exploring options such as installing solar panels, hydroelectric setups, or small wind turbines tailored to your region's suitability. Some neighborhoods have collaborated to establish communal solar grids, small-scale hydro projects, and more sustainable initiatives. Engage with your local neighborhoods to foster action and change.
+                    
+                    By taking these steps, you join a global movement of 820 million individuals across 1,480 jurisdictions in 28 countries who have recognized the urgency of addressing climate change. Your investment in renewable energy not only benefits your immediate environment but contributes to a larger shift towards sustainable energy practices." </p>
+            </ul>
+
+           
+
+            
+            <img src="https://cdn.pixabay.com/photo/2022/08/18/11/29/wind-energy-7394705_1280.jpg" alt="Green Energy">
+        </div>
+    </section>
+
+    <section id="calculateSolarPanels">
+<h1>Fancy a Quick Estimation?</h1>
+      <h2>Solar Panel Calculator</h2>
+
+        <!-- Input for Monthly Energy Consumption -->
+    <label for="monthlyUsage">Monthly Energy Consumption (kWh):</label>
+    <input type="number" id="monthlyUsage" placeholder="Enter your monthly energy consumption">
+
+
+    <!-- Button to Trigger Calculation -->
+    <button onclick="calculateSolarPanels()">Calculate</button>
+
+    <div id="result"></div>
+
+
+
+
+
+    <small>
+        Looking for a quick estimate of the number of solar panels you'd need based on your energy consumption? Curious about the environmental impact of making the switch? Explore the details and benefits with insights from the
+        <a href="https://www.eia.gov/tools/faqs/faq.php?id=74&t=11" id="https://www.eia.gov/tools/faqs/faq.php?id=74&t=11">U.S. Energy Information Administration</a>.
+      </small>
+
+      <style>
+      img {
+        max-width: 50%; /* Ensure the image doesn't exceed its container */
+        height: 50%; /* Automatically adjust height based on width */
+        border-radius: 50px; /* Optional: Add border-radius for a rounded look */
+        margin-left: 5% ; /* Add margin to separate the image from text */
+        margin-right: 5%;
+    }
+</style>
+
+    <h3>Equivalent Impact:</h3>
+    <div id="equivalentInfo"></div>
+
+    <script>
+        // Function to Calculate Solar Panels Needed
+        function calculateSolarPanels() {
+            const monthlyUsageInput = document.getElementById('monthlyUsage');
+            // Get Monthly Energy Consumption from Input
+            const monthlyUsage = parseFloat(monthlyUsageInput.value);
+
+            if (isNaN(monthlyUsage) || monthlyUsage <= 0) {// checks if number is a valid number (less than 0 causes the alert) (isNaN(monthlyUsage) checks if its a number
+                alert('Please enter a valid positive number for monthly energy consumption.');
+                monthlyUsageInput.value = ''; // Clear the input
+                return;
+            }
+            // Estimate Panels Needed (Assuming 300 kWh per Panel)
+            const panelsNeeded = Math.ceil(monthlyUsage / 300);
+             // Display Result
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `<p>You would need approximately ${panelsNeeded} solar panels to match your monthly energy use with renewable energy.</p>`;
+
+            // Calculate equivalent impact
+            const gasSaved = (monthlyUsage / 0.97).toFixed(2); //Gallons of Gasoline Equivalent: Assumes 0.97 gallons of gasoline emissions per kWh. 
+            const coalBurned = (monthlyUsage / 2.30).toFixed(2); // Coal Burn Equivalent: Assumes 2.30 pounds of CO2 emissions per kWh.
+            const co2Reduced = (0.5 * monthlyUsage).toFixed(2); // Carbon Dioxide Reduction Equivalent: Assumes 0.5 pounds of CO2 emissions avoided per kWh.
+            const equivalentInfoElement = document.getElementById('equivalentInfo');
+            equivalentInfoElement.innerHTML = `
+                <p>Equivalent Impact:</p>
+                <ul>
+                    <li>${gasSaved} gallons of gas saved per month</li>
+                    <li>${coalBurned} pounds of coal burned per month</li>
+                    <li>${co2Reduced} pounds of CO2 emissions reduced per month</li>
+                </ul>
+            `;
+        }
+    </script>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+          <p>Copyright © 2024 T21550-1. All rights reserved.</p>
+          <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+          <p>Contact@T21550-1</p>
+        </div>
+      </footer>
+
+</body>
+</html>
